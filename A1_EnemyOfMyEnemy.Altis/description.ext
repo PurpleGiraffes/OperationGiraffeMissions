@@ -1,0 +1,226 @@
+// ============================================================================================
+
+// F3 - Mission Header
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+class Header
+{
+	gameType = Coop;
+	minPlayers = 5;
+	maxPlayers = 8;
+};
+
+// ============================================================================================
+
+onLoadName = "Co6: Enemy of My Enemy, v.0.6";
+onLoadMission = "Resistance fighters attempt to disable a AAF-controlled radio tower with IEDs to allow NATO forces to land on Altis without alerting the main body of AAF forces.";
+author = "EsotericReverie";
+loadScreen = "enemyOfMyEnemy.jpg";
+
+
+// ============================================================================================
+
+class CfgDebriefing
+{
+	class End1
+	{
+		title = "Towers destroyed!";
+		subtitle = "A strike against the oppressors";
+		description = "We managed to strike a hard blow against the AAF scum in Kavala, taking out their communications with the rest of the AAF force. Now, NATO troops can move in in the dark of night, to help us clear the streets of the oppressors.<br/><br/>Good job, men!";
+		// pictureBackground = "";
+		// picture = "";
+		// pictureColor[] = {0.0,0.3,0.6,1};
+	};
+
+	class End2
+	{
+		title = "Ending #2";
+		subtitle = "";
+		description = "*** Insert debriefing #2 here. ***";
+		// pictureBackground = "";
+		// picture = "";
+		// pictureColor[] = {0.0,0.3,0.6,1};
+	};
+
+	class End3
+	{
+		title = "Ending #3";
+		subtitle = "";
+		description = "*** Insert debriefing #3 here. ***";
+		// pictureBackground = "";
+		// picture = "";
+		// pictureColor[] = {0.0,0.3,0.6,1};
+	};
+
+	class End4
+	{
+		title = "Ending #4";
+		subtitle = "";
+		description = "*** Insert debriefing #4 here. ***";
+		// pictureBackground = "";
+		// picture = "";
+		// pictureColor[] = {0.0,0.3,0.6,1};
+	};
+
+	class End5
+	{
+		title = "Ending #5";
+		subtitle = "";
+		description = "*** Insert debriefing #5 here. ***";
+		// pictureBackground = "";
+		// picture = "";
+		// pictureColor[] = {0.0,0.3,0.6,1};
+	};
+
+	class End6
+	{
+		title = "Ending #6";
+		subtitle = "";
+		description = "*** Insert debriefing #6 here. ***";
+		// pictureBackground = "";
+		// picture = "";
+		// pictureColor[] = {0.0,0.3,0.6,1};
+	};
+};
+
+
+class CfgFunctions
+{
+	class WS
+	{
+		class init
+		{
+			class init {file = "ws_fnc\ws_fnc_init.sqf";postInit = 1;};
+		};
+		class debug
+		{
+			class debugText {file = "ws_fnc\dbg\ws_fnc_debugText.sqf";};
+			class typeCheck {file = "ws_fnc\dbg\ws_fnc_typeCheck.sqf";};
+			class clipboardCode {file = "ws_fnc\dbg\ws_fnc_clipBoardcode.sqf";};
+			class copyPos {file = "ws_fnc\dbg\ws_fnc_copypos.sqf";};
+			class countUnits {file = "ws_fnc\dbg\ws_fnc_countUnits.sqf";};
+			class debugTriggers {file = "ws_fnc\dbg\ws_fnc_debugTriggers.sqf";postInit = 1;};
+		};
+		class tools
+		{
+			class selectRandom {file = "ws_fnc\tools\ws_fnc_selectRandom.sqf"};
+			class gameCheck {file = "ws_fnc\tools\ws_fnc_gamecheck.sqf";preInit = 1;};
+			class switchLights {file = "ws_fnc\tools\ws_fnc_switchLights.sqf";};
+			class attachLight {file = "ws_fnc\tools\ws_fnc_attachLight.sqf";};
+			class collectMarkers {file = "ws_fnc\tools\ws_fnc_collectMarkers.sqf"};
+			class loadVehicle {file = "ws_fnc\tools\ws_fnc_loadVehicle.sqf"};
+			class checkHC {file = "ws_fnc\tools\ws_fnc_checkHC.sqf"};
+			class broadcast {file = "ws_fnc\tools\ws_fnc_broadcast.sqf";};
+			class showFPS {file = "ws_fnc\tools\ws_fnc_showFPS.sqf";};
+		};
+		class getPos
+		{
+			class getPos {file ="ws_fnc\getPos\ws_fnc_getPos.sqf";};
+			class nearestRoadPos {file = "ws_fnc\getPos\ws_fnc_NearestRoadPos.sqf";};
+			class nearestLandPos {file = "ws_fnc\getPos\ws_fnc_NearestLandPos.sqf";};
+			class getPosInArea {file = "ws_fnc\getPos\ws_fnc_getPosInArea.sqf";};
+			class getBPos {file = "ws_fnc\getPos\ws_fnc_getBPos.sqf";};
+		}
+		class AI
+		{
+			class createGroup {file = "ws_fnc\AI\ws_fnc_createGroup.sqf";};
+			class createVehicle {file = "ws_fnc\AI\ws_fnc_createVehicle.sqf";};
+			class betterVehicle {file = "ws_fnc\AI\ws_fnc_bettervehicle.sqf";};
+			class enterBuilding {file = "ws_fnc\AI\ws_fnc_enterBuilding.sqf";};
+			class taskDefend {file = "ws_fnc\AI\ws_fnc_taskDefend.sqf";};
+			class taskAmbush {file = "ws_fnc\AI\ws_fnc_taskAmbush.sqf";};
+			class taskCrew {file = "ws_fnc\AI\ws_fnc_taskCrew.sqf";};
+			class addWaypoint {file = "ws_fnc\AI\ws_fnc_addWaypoint.sqf";};
+			class setAIMode {file = "ws_fnc\AI\ws_fnc_setAIMode.sqf";};
+		};
+	};
+	class _ESO
+	{
+		class AI
+		{
+			class fireWeaponAtTargets { file = "eso\eso_fireWeaponAtTargets.sqf";};
+			class firedNearLoudness { file = "eso\eso_firedNearLoudness.sqf";};
+			class clearWaypoints { file = "eso\eso_clearWaypoints.sqf"; };
+			class sendReinforcements { file = "eso\eso_sendReinforcements.sqf";};
+		};
+	};
+};
+
+
+// ============================================================================================
+// IDENTITIES:
+// Available nameSounds:
+// Anthis
+// Costa
+// Dimitirou
+// Elias
+// Gekas
+// Kouris
+// Leventis
+// Markos
+// Nikas
+// Nicolo
+// Panas
+// Petros
+// Rosi
+// Samaras
+// Stavrou
+// Thanos
+// Vega
+class CfgIdentities
+{
+    class Resistance_Anthis
+    {
+			name = "Anthis";
+			nameSound = "Anthis";
+			face="GreekHead_A3_01";
+			glasses="None";
+			speaker="Male01GRE";
+			pitch=1.1;
+    };
+	class Resistance_Panas
+    {
+			name = "Panas";
+			nameSound = "Panas";
+			face="GreekHead_A3_02";
+			glasses="None";
+			speaker="Male02GRE";
+			pitch=1.2;
+    };
+	class Resistance_Kouris
+    {
+			name = "Kouris";
+			nameSound = "Kouris";
+			face="GreekHead_A3_03";
+			glasses="None";
+			speaker="Male03GRE";
+			pitch=1.0;
+    };
+	class Resistance_Stavrou
+    {
+			name = "Stavrou";
+			nameSound = "Stavrou";
+			face="GreekHead_A3_04";
+			glasses="None";
+			speaker="Male04GRE";
+			pitch=1.1;
+    };
+	class Resistance_Petros
+    {
+			name = "Petros";
+			nameSound = "Petros";
+			face="AfricanHead_01";
+			glasses="None";
+			speaker="Male02GRE";
+			pitch=1.0;
+    };
+	class Resistance_Markos
+    {
+			name = "Markos";
+			nameSound = "Markos";
+			face="AfricanHead_02";
+			glasses="None";
+			speaker="Male01GRE";
+			pitch=0.93;
+    };
+};

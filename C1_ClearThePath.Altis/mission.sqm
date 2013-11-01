@@ -1,0 +1,658 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"a3_map_altis",
+		"A3_Structures_F_Mil_Shelters",
+		"A3_Structures_F_Walls",
+		"A3_Characters_F_BLUFOR",
+		"A3_Characters_F_INDEP",
+		"A3_Air_F_Beta_Heli_Attack_01",
+		"A3_Structures_F_Mil_Helipads",
+		"A3_Armor_F_T100K",
+		"A3_Armor_F_APC_Wheeled_03"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"A3_Characters_F_INDEP",
+		"A3_Air_F_Beta_Heli_Attack_01",
+		"A3_Armor_F_APC_Wheeled_03",
+		"A3_Structures_F_Mil_Shelters",
+		"A3_Structures_F_Walls",
+		"A3_Structures_F_Mil_Helipads",
+		"A3_Armor_F_T100K",
+		"a3_map_altis"
+	};
+	randomSeed=1712437;
+	class Intel
+	{
+		briefingName="C06 Clearing a Path (B1)";
+		resistanceWest=0;
+		startWeather=0.29999998;
+		startWind=0.099999994;
+		startWaves=0.099999994;
+		forecastWeather=0.29999998;
+		forecastWind=0.099999994;
+		forecastWaves=0.099999994;
+		forecastLightnings=0.099999994;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogBase=0.001;
+		forecastFogBase=0.001;
+		startFogDecay=0.0049999999;
+		forecastFogDecay=0.0049999999;
+	};
+	class Groups
+	{
+		items=7;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4500.1626,151.29019,11503.23};
+					azimut=0.54722965;
+					id=0;
+					side="WEST";
+					vehicle="B_spotter_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+					init="this setcaptive true";
+				};
+			};
+		};
+		class Item1
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={4493.7939,150.69731,11523.365};
+					azimut=310.02234;
+					id=1;
+					side="GUER";
+					vehicle="I_Sniper_F";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.46666664;
+				};
+				class Item1
+				{
+					position[]={4500.8379,152.08269,11523.978};
+					azimut=310.02234;
+					id=2;
+					side="GUER";
+					vehicle="I_Spotter_F";
+					rank="CORPORAL";
+					skill=0.33333331;
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4485.5752,149.90382,11531.034};
+					placement=5;
+					completitionRadius=5;
+					type="SAD";
+					combatMode="RED";
+					formation="LINE";
+					speed="FULL";
+					combat="COMBAT";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item2
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={4484.2544,129.03004,11666.876};
+					azimut=202.86824;
+					id=3;
+					side="GUER";
+					vehicle="I_Soldier_AA_F";
+					skill=0.60000002;
+				};
+				class Item1
+				{
+					position[]={4477.5054,129.08002,11665.45};
+					azimut=133.74348;
+					id=4;
+					side="GUER";
+					vehicle="I_Soldier_AA_F";
+					skill=0.60000002;
+				};
+				class Item2
+				{
+					position[]={4482.0674,128.69603,11660.125};
+					azimut=-10.6924;
+					special="NONE";
+					id=5;
+					side="GUER";
+					vehicle="I_Soldier_AA_F";
+					leader=1;
+					rank="CORPORAL";
+					skill=0.60000002;
+					init="AATeam = group this";
+				};
+				class Item3
+				{
+					position[]={4480.7373,129.03754,11666.506};
+					azimut=175.46428;
+					id=6;
+					side="GUER";
+					vehicle="I_Soldier_AA_F";
+					skill=0.60000002;
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4474.3721,129.19453,11666.95};
+					completitionRadius=5;
+					type="GUARD";
+					combatMode="RED";
+					formation="DIAMOND";
+					speed="FULL";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item3
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={980.56415,0.22937664,11994.816};
+					azimut=88.2323;
+					offsetY=200;
+					special="FLY";
+					id=7;
+					side="WEST";
+					vehicle="B_Heli_Attack_01_F";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init="AttackHelis = group this";
+				};
+				class Item1
+				{
+					position[]={977.08966,0.26671398,12010.741};
+					azimut=88.2323;
+					offsetY=200;
+					special="FLY";
+					id=8;
+					side="WEST";
+					vehicle="B_Heli_Attack_01_F";
+					rank="CORPORAL";
+					skill=0.60000002;
+				};
+			};
+			class Waypoints
+			{
+				items=4;
+				class Item0
+				{
+					position[]={2897.5239,206.83122,11740.579};
+					completitionRadius=40;
+					combatMode="GREEN";
+					formation="LINE";
+					speed="NORMAL";
+					combat="COMBAT";
+					expActiv="player globalchat ""attackhelis moving in""";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+				class Item1
+				{
+					position[]={4478.1006,125.59447,11621.019};
+					id=27;
+					type="DESTROY";
+					combatMode="RED";
+					formation="VEE";
+					speed="FULL";
+					combat="COMBAT";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+				class Item2
+				{
+					position[]={4502.6787,100.90119,11754.493};
+					id=26;
+					type="DESTROY";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+				class Item3
+				{
+					position[]={3400.9316,30.911108,12811.485};
+					combatMode="WHITE";
+					formation="COLUMN";
+					speed="FULL";
+					combat="AWARE";
+					expActiv="{{deletevehicle _x} forEach crew _x; deletevehicle _x} forEach units AttackHelis";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item4
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4522.3213,104.20574,11748.451};
+					azimut=-39.331299;
+					offsetY=50;
+					special="FLY";
+					id=9;
+					side="GUER";
+					vehicle="I_crew_F";
+					leader=1;
+					skill=0.60000002;
+					init="This moveInGunner Tank1";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4500.4395,100.80834,11756.742};
+					type="SENTRY";
+					combatMode="WHITE";
+					speed="FULL";
+					combat="SAFE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item5
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={4487.3066,127.89748,11612.941};
+					azimut=-60.127399;
+					offsetY=50;
+					special="FLY";
+					id=10;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					rank="CORPORAL";
+					skill=0.60000002;
+					init="Tank2Crew = group this; this moveInCommander Tank2";
+				};
+				class Item1
+				{
+					position[]={4491.8252,127.81141,11613.52};
+					azimut=-67.9674;
+					offsetY=50;
+					special="FLY";
+					id=11;
+					side="GUER";
+					vehicle="I_crew_F";
+					skill=0.60000002;
+					init="This moveInGunner Tank2";
+				};
+				class Item2
+				{
+					position[]={4518.0776,102.6318,11750.11};
+					azimut=-31.491301;
+					offsetY=50;
+					special="FLY";
+					id=12;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init="Tank1Crew = group this; this moveInCommander Tank1";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4475.0562,125.12171,11621.915};
+					type="SENTRY";
+					combatMode="WHITE";
+					speed="FULL";
+					combat="SAFE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item6
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4508.3286,125.78065,11653.011};
+					azimut=-5.2960801;
+					special="FLY";
+					id=13;
+					side="GUER";
+					vehicle="I_APC_Wheeled_03_cannon_F";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+	class Vehicles
+	{
+		items=14;
+		class Item0
+		{
+			position[]={4505.4404,101.44309,11751.024};
+			azimut=138.16292;
+			id=14;
+			side="EMPTY";
+			vehicle="CamoNet_INDP_big_F";
+			skill=0.60000002;
+		};
+		class Item1
+		{
+			position[]={4507.8774,123.71498,11634.558};
+			azimut=-85.537796;
+			id=15;
+			side="EMPTY";
+			vehicle="CamoNet_INDP_open_F";
+			skill=0.60000002;
+		};
+		class Item2
+		{
+			position[]={4471.0669,128.67796,11656.223};
+			id=16;
+			side="EMPTY";
+			vehicle="Land_CncShelter_F";
+			skill=0.60000002;
+		};
+		class Item3
+		{
+			position[]={4480.6846,125.84578,11620.689};
+			azimut=488.69458;
+			id=17;
+			side="EMPTY";
+			vehicle="CamoNet_INDP_big_F";
+			skill=0.60000002;
+		};
+		class Item4
+		{
+			position[]={4492.415,127.23376,11647.952};
+			azimut=178.754;
+			id=18;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			skill=0.60000002;
+		};
+		class Item5
+		{
+			position[]={4543.9707,104.49432,11767.899};
+			azimut=178.754;
+			id=19;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			skill=0.60000002;
+		};
+		class Item6
+		{
+			position[]={4834.0015,67.193993,11600.991};
+			azimut=178.754;
+			id=20;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			skill=0.60000002;
+		};
+		class Item7
+		{
+			position[]={4332.4531,48.737236,12044.561};
+			azimut=178.754;
+			id=21;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			skill=0.60000002;
+		};
+		class Item8
+		{
+			position[]={3947.0513,13.473916,11384.985};
+			azimut=178.754;
+			id=22;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			skill=0.60000002;
+		};
+		class Item9
+		{
+			position[]={4492.3779,99.430954,11228.19};
+			azimut=178.754;
+			id=23;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			skill=0.60000002;
+		};
+		class Item10
+		{
+			position[]={3663.2122,17.632252,11971.214};
+			azimut=178.754;
+			id=24;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			skill=0.60000002;
+		};
+		class Item11
+		{
+			position[]={3967.2847,20.715227,11596.909};
+			azimut=178.754;
+			id=25;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			skill=0.60000002;
+		};
+		class Item12
+		{
+			position[]={4502.6787,100.90119,11754.493};
+			azimut=-39.331299;
+			special="FLY";
+			id=26;
+			side="EMPTY";
+			vehicle="O_MBT_02_cannon_F";
+			skill=0.60000002;
+			text="Tank1";
+			init="Tanks = group this";
+		};
+		class Item13
+		{
+			position[]={4478.1006,125.59447,11621.019};
+			azimut=-67.9674;
+			special="FLY";
+			id=27;
+			side="EMPTY";
+			vehicle="O_MBT_02_cannon_F";
+			skill=0.60000002;
+			text="Tank2";
+		};
+	};
+	class Sensors
+	{
+		items=2;
+		class Item0
+		{
+			position[]={4472.0615,129.23093,11667.177};
+			a=100;
+			b=100;
+			interruptable=1;
+			type="GUER G";
+			age="UNKNOWN";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={947.41254,-185.9438,12058.885};
+			a=0;
+			b=0;
+			age="UNKNOWN";
+			expCond="({alive _x} count units AttackHelis) < 2";
+			expActiv="endMission ""lose""";
+			class Effects
+			{
+				track="LeadTrack04a_F";
+				titleType="TEXT";
+				title="Foxtrot have taken casualties. Your mission has failed.";
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=872625;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogBase=0.001;
+		forecastFogBase=0.001;
+		startFogDecay=0.0049999999;
+		forecastFogDecay=0.0049999999;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=11839207;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogBase=0.001;
+		forecastFogBase=0.001;
+		startFogDecay=0.0049999999;
+		forecastFogDecay=0.0049999999;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=5591365;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogBase=0.001;
+		forecastFogBase=0.001;
+		startFogDecay=0.0049999999;
+		forecastFogDecay=0.0049999999;
+	};
+};
