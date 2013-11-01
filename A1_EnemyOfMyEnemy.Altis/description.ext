@@ -12,7 +12,7 @@ class Header
 
 // ============================================================================================
 
-onLoadName = "Co6: Enemy of My Enemy, v.0.6";
+onLoadName = "A1: Enemy of My Enemy";
 onLoadMission = "Resistance fighters attempt to disable a AAF-controlled radio tower with IEDs to allow NATO forces to land on Altis without alerting the main body of AAF forces.";
 author = "EsotericReverie";
 loadScreen = "enemyOfMyEnemy.jpg";
