@@ -4,7 +4,6 @@ class Mission
 	addOns[]=
 	{
 		"a3_map_stratis",
-		"A3_Characters_F_BLUFOR",
 		"A3_Boat_F_Boat_Transport_01",
 		"a3_characters_f_gamma",
 		"a3_map_altis",
@@ -35,7 +34,6 @@ class Mission
 		"A3_Armor_F_APC_Wheeled_03",
 		"A3_Soft_F_TruckHeavy",
 		"A3_Soft_F_Gamma_TruckHeavy",
-		"A3_Characters_F_BLUFOR",
 		"A3_Structures_F_Items_Vessels",
 		"A3_Soft_F_Offroad_01",
 		"A3_Structures_F_Walls",
@@ -1377,7 +1375,6 @@ class Mission
 					id=66;
 					side="GUER";
 					vehicle="I_soldier_F";
-					player="PLAY CDG";
 					skill=0.2;
 					init="this removeweapon ""ItemRadio"";";
 				};
@@ -1462,12 +1459,11 @@ class Mission
 				class Item6
 				{
 					position[]={7026.9536,139.26309,16702.176};
-					azimut=260.21426;
+					azimut=260.21399;
 					special="NONE";
 					id=73;
 					side="GUER";
 					vehicle="I_MRAP_03_hmg_F";
-					player="PLAY G";
 					skill=0.33333331;
 					text="ConvoyTrailingStrider";
 				};
@@ -1748,24 +1744,6 @@ class Mission
 		};
 		class Item24
 		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5153.0483,109.1123,15733.37};
-					azimut=-136.13219;
-					id=90;
-					side="WEST";
-					vehicle="B_Soldier_F";
-					leader=1;
-					skill=0.60000002;
-				};
-			};
-		};
-		class Item25
-		{
 			side="GUER";
 			class Vehicles
 			{
@@ -1773,7 +1751,7 @@ class Mission
 				class Item0
 				{
 					position[]={4741.1011,158.06531,15935.137};
-					id=91;
+					id=90;
 					side="GUER";
 					vehicle="I_Soldier_GL_F";
 					leader=1;
@@ -1791,7 +1769,7 @@ class Mission
 				class Item1
 				{
 					position[]={4746.1011,161.41905,15930.137};
-					id=92;
+					id=91;
 					side="GUER";
 					vehicle="I_soldier_F";
 					skill=0.2;
@@ -1799,7 +1777,7 @@ class Mission
 				};
 			};
 		};
-		class Item26
+		class Item25
 		{
 			side="GUER";
 			class Vehicles
@@ -1808,7 +1786,7 @@ class Mission
 				class Item0
 				{
 					position[]={4263.2544,107.18304,15410.922};
-					id=93;
+					id=92;
 					side="GUER";
 					vehicle="I_Soldier_GL_F";
 					leader=1;
@@ -1828,11 +1806,31 @@ class Mission
 				class Item1
 				{
 					position[]={4268.2544,109.02913,15405.922};
-					id=94;
+					id=93;
 					side="GUER";
 					vehicle="I_soldier_F";
 					skill=0.2;
 					init="this removeweapon ""ItemRadio"";";
+				};
+			};
+		};
+		class Item26
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={7015.9565,136.87706,16711.883};
+					azimut=260.21399;
+					special="NONE";
+					id=94;
+					side="GUER";
+					vehicle="I_MRAP_03_hmg_F";
+					leader=1;
+					skill=0.33333331;
+					text="ConvoyTrailingStrider_1";
 				};
 			};
 		};
