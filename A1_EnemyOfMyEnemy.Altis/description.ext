@@ -10,6 +10,53 @@ class Header
 	maxPlayers = 8;
 };
 
+
+// ============================================================================================
+class Weapons
+{
+	// Rifles
+	class arifle_Mk20_MRCO_F {count = 3;};
+	class arifle_MX_SW_Hamr_pointer_F {count = 1;};
+	class LMG_Mk200_MRCO_F {count = 1;};
+	class LMG_Zafir_F {count = 1;};
+	class srifle_EBR_ARCO_pointer_snds_F {count = 1;};
+	class srifle_EBR_DMS_F {count = 1;};
+	class srifle_LRR_SOS_F {count = 1;};
+
+	// Launchers
+	class launch_NLAW_F {count = 1;};
+
+	// Items
+	class NVGoggles_INDEP {count = 2;};
+	class NVGoggles {count = 1;};
+	class Rangefinder {count = 1;};
+	class Binocular {count = 2;};
+	class Medikit {count = 2;};
+	class FirstAidKit {count = 16;};
+};
+
+class Magazines
+{
+	class 30Rnd_556x45_Stanag {count = 30;}; 						// for arifle_Mk20
+	class 30Rnd_65x39_caseless_mag {count = 10;};				// for arifle_MX_SW
+	class 200Rnd_65x39_cased_Box_Tracer {count = 5;};		// for LMG_Mk200
+	class 150Rnd_762x51_Box_Tracer {count = 5;};				// for LMG_Zafir
+	class 20Rnd_762x51_Mag {count = 5;};								// for srifle_EBR
+	class 7Rnd_408_Mag {count = 6;};										// for srifle_LRR
+
+	class NLAW_F {count = 4;};													// for launch_NLAW_F
+
+	class HandGrenade {count = 16;};
+	class SmokeShell {count = 16;};
+	class Chemlight_green {count = 10;};
+};
+
+class Backpacks
+{
+ 	class US_Patrol_Pack_EP1 {count = 4;};
+ 	class US_Assault_Pack_EP1 {count = 4;};
+};
+
 // ============================================================================================
 
 onLoadName = "A1: Enemy of My Enemy";
@@ -134,7 +181,8 @@ class CfgFunctions
 			class setAIMode {file = "ws_fnc\AI\ws_fnc_setAIMode.sqf";};
 		};
 	};
-	class _ESO
+
+	class ESO
 	{
 		class AI
 		{
@@ -142,6 +190,10 @@ class CfgFunctions
 			class firedNearLoudness { file = "eso\eso_firedNearLoudness.sqf";};
 			class clearWaypoints { file = "eso\eso_clearWaypoints.sqf"; };
 			class sendReinforcements { file = "eso\eso_sendReinforcements.sqf";};
+		};
+		class MissionHelpers
+		{
+			class setLoadout { file = "eso\eso_setLoadout.sqf";};
 		};
 	};
 };

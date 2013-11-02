@@ -33,20 +33,21 @@ class Mission
 		"A3_Modules_F_Intel",
 		"a3_characters_f_gamma",
 		"A3_Armor_F_APC_Wheeled_03",
-		"A3_Soft_F_Quadbike",
-		"a3_soft_f_beta_quadbike",
 		"A3_Soft_F_TruckHeavy",
 		"A3_Soft_F_Gamma_TruckHeavy",
+		"A3_Characters_F_BLUFOR",
 		"A3_Structures_F_Items_Vessels",
 		"A3_Soft_F_Offroad_01",
 		"A3_Structures_F_Walls",
 		"A3_Soft_F_Truck",
+		"A3_Soft_F_Quadbike",
+		"a3_soft_f_beta_quadbike",
 		"a3_map_altis"
 	};
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="CO6: Enemy of My Enemy";
+		briefingName="A1: Enemy of My Enemy [CO:5-8]";
 		overviewText="Resistance fighters try to disable a radio tower using IEDs, allowing NATO troops to land on Altis without alerting the main body of AAF forces.";
 		resistanceWest=0;
 		startWeather=0.84999996;
@@ -74,7 +75,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=24;
+		items=25;
 		class Item0
 		{
 			side="GUER";
@@ -375,7 +376,7 @@ class Mission
 				class Item0
 				{
 					position[]={4544.2813,263.5629,15412.636};
-					type="DISMISS";
+					type="SENTRY";
 					combatMode="WHITE";
 					speed="LIMITED";
 					combat="CARELESS";
@@ -530,7 +531,6 @@ class Mission
 					leader=1;
 					lock="UNLOCKED";
 					skill=0.60000002;
-					init="hint ""Both towers destroyed. Well done!""";
 					description="Succeed if both towers destroyed";
 					syncId=5;
 					synchronizations[]={5,4};
@@ -545,7 +545,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					presenceCondition="!alive Pickup1";
+					presenceCondition="!alive BombCar";
 					position[]={4575.1504,263.81076,15388.763};
 					class args
 					{
@@ -563,7 +563,6 @@ class Mission
 					leader=1;
 					lock="UNLOCKED";
 					skill=0.60000002;
-					init="hint ""Both towers destroyed. Well done!""";
 					description="Fail if truck destroyed";
 					syncId=6;
 					synchronizations[]={6,4};
@@ -590,7 +589,7 @@ class Mission
 					{
 						"MarkerReservesPos1"
 					};
-					init="Reserves = group this; [Reserves, position this, [""defend"",60],[""SAFE"", ""BLUE"", ""NORMAL""]] call ws_fnc_addWaypoint;";
+					init="Reserves = group this; [group this, position this, [""defend"",60],[""SAFE"", ""YELLOW"", ""NORMAL""]] call ws_fnc_addWaypoint;";
 					syncId=7;
 					synchronizations[]={10};
 				};
@@ -633,16 +632,16 @@ class Mission
 					vehicle="I_Soldier_AAT_F";
 					rank="CORPORAL";
 					skill=0.33333331;
-					init="this moveInDriver ReserveCar2";
 				};
 				class Item5
 				{
 					position[]={5097.0244,102.91329,15660.291};
-					azimut=41.680531;
+					azimut=41.6805;
 					id=29;
 					side="GUER";
-					vehicle="I_soldier_A_F";
+					vehicle="I_Soldier_A_F";
 					skill=0.2;
+					init="this moveInDriver ReserveCar2";
 				};
 				class Item6
 				{
@@ -683,7 +682,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="Petros";
-					init="ResistanceFighters = group this; this addItem ""NVGoggles""; this assignItem ""NVGoggles""; this addItem ""Rangefinder""; this assignItem ""Rangefinder""; this setVariable [""SpottingDistance"", 100]; this setIdentity ""Resistance_Petros""";
+					init="ResistanceFighters = group this; this setVariable [""SpottingDistance"", 100]; this setIdentity ""Resistance_Petros""; [this, ""guerilla_lt""] call ESO_fnc_setLoadout;";
 					description="Petros - cell leader";
 					syncId=8;
 					synchronizations[]={3,4};
@@ -700,7 +699,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="Anthis";
-					init="this addItem ""muzzle_snds_M""; this assignItem ""muzzle_snds_M""; this setIdentity ""Resistance_Anthis""";
+					init="this setIdentity ""Resistance_Anthis""; [this, ""guerilla_1""] call ESO_fnc_setLoadout;";
 					description="Anthis";
 				};
 				class Item2
@@ -715,7 +714,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="Stavrou";
-					init="removeBackpack this; this addItem ""muzzle_snds_M""; this assignItem ""muzzle_snds_M"";  this setIdentity ""Resistance_Stavrou""";
+					init="this setIdentity ""Resistance_Stavrou""; [this, ""guerilla_6""] call ESO_fnc_setLoadout;";
 					description="Stavrou";
 				};
 				class Item3
@@ -729,7 +728,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="Kouris";
-					init="this addItem ""Binocular""; this assignItem ""Binocular""; this setIdentity ""Resistance_Kouris"";";
+					init="this setIdentity ""Resistance_Kouris""; [this, ""guerilla_2""] call ESO_fnc_setLoadout;";
 					description="Kouris";
 				};
 				class Item4
@@ -744,7 +743,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="Markos";
-					init="this addItem ""muzzle_snds_M""; this assignItem ""muzzle_snds_M""; this setIdentity ""Resistance_Markos""";
+					init="this setIdentity ""Resistance_Markos""; [this, ""guerilla_4""] call ESO_fnc_setLoadout;";
 					description="Markos";
 				};
 				class Item5
@@ -759,7 +758,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="Panas";
-					init="this addItem ""Binocular""; this assignItem ""Binocular""; this setIdentity ""Resistance_Panas""";
+					init="this setIdentity ""Resistance_Panas""; [this, ""guerilla_3""] call ESO_fnc_setLoadout;";
 					description="Panas";
 				};
 				class Item6
@@ -774,7 +773,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="Markos_1";
-					init="this addItem ""muzzle_snds_M""; this assignItem ""muzzle_snds_M""; this setIdentity ""Resistance_Markos""";
+					init="this setIdentity ""Resistance_Markos""; [this, ""guerilla_5""] call ESO_fnc_setLoadout;";
 					description="Markos";
 				};
 			};
@@ -1069,7 +1068,7 @@ class Mission
 			side="GUER";
 			class Vehicles
 			{
-				items=10;
+				items=9;
 				class Item0
 				{
 					position[]={5460.9219,72.481903,17890.814};
@@ -1167,21 +1166,10 @@ class Mission
 					skill=0.2;
 					init="this moveInGunner MechanizedGorgon";
 				};
-				class Item9
-				{
-					position[]={5450.8584,75.335831,17915.742};
-					azimut=-29.265089;
-					id=56;
-					side="GUER";
-					vehicle="I_Quadbike_01_F";
-					rank="SERGEANT";
-					skill=0.60000002;
-					description="Petros - cell leader";
-				};
 			};
 			class Waypoints
 			{
-				items=6;
+				items=4;
 				class Item0
 				{
 					position[]={5459.0142,71.650696,17880.121};
@@ -1190,6 +1178,9 @@ class Mission
 					class Effects
 					{
 					};
+					timeoutMin=12;
+					timeoutMid=12;
+					timeoutMax=2;
 					showWP="NEVER";
 				};
 				class Item1
@@ -1206,15 +1197,6 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={5659.4946,126.60911,17562.066};
-					completitionRadius=7;
-					class Effects
-					{
-					};
-					showWP="NEVER";
-				};
-				class Item3
-				{
 					position[]={5107.2939,27.58654,16630.369};
 					completitionRadius=7;
 					class Effects
@@ -1222,16 +1204,7 @@ class Mission
 					};
 					showWP="NEVER";
 				};
-				class Item4
-				{
-					position[]={5321.2285,30.747204,16350.712};
-					completitionRadius=7;
-					class Effects
-					{
-					};
-					showWP="NEVER";
-				};
-				class Item5
+				class Item3
 				{
 					position[]={6152.3428,42.446712,16151.335};
 					completitionRadius=50;
@@ -1253,7 +1226,7 @@ class Mission
 				{
 					position[]={3447.5667,2.1640322,13301.997};
 					azimut=395.28699;
-					id=57;
+					id=56;
 					side="GUER";
 					vehicle="I_Truck_02_covered_F";
 					rank="CORPORAL";
@@ -1264,7 +1237,7 @@ class Mission
 				{
 					position[]={3441.0552,2.1587524,13295.751};
 					azimut=37.315613;
-					id=58;
+					id=57;
 					side="GUER";
 					vehicle="I_Soldier_SL_F";
 					leader=1;
@@ -1276,7 +1249,7 @@ class Mission
 				{
 					position[]={3434.0474,2.0835912,13294.806};
 					azimut=37.315613;
-					id=59;
+					id=58;
 					side="GUER";
 					vehicle="I_soldier_AR_F";
 					rank="CORPORAL";
@@ -1286,7 +1259,7 @@ class Mission
 				{
 					position[]={3427.0408,1.9979675,13293.862};
 					azimut=37.315613;
-					id=60;
+					id=59;
 					side="GUER";
 					vehicle="I_soldier_AAR_F";
 					skill=0.2;
@@ -1295,7 +1268,7 @@ class Mission
 				{
 					position[]={3420.0344,1.4610962,13292.921};
 					azimut=37.315613;
-					id=61;
+					id=60;
 					side="GUER";
 					vehicle="I_medic_F";
 					skill=0.2;
@@ -1304,7 +1277,7 @@ class Mission
 				{
 					position[]={3442.001,2.2647297,13288.743};
 					azimut=37.315613;
-					id=62;
+					id=61;
 					side="GUER";
 					vehicle="I_soldier_TL_F";
 					rank="SERGEANT";
@@ -1314,7 +1287,7 @@ class Mission
 				{
 					position[]={3442.9475,2.3016431,13281.738};
 					azimut=37.315601;
-					id=63;
+					id=62;
 					side="GUER";
 					vehicle="I_Soldier_AR_F";
 					skill=0.2;
@@ -1324,7 +1297,7 @@ class Mission
 				{
 					position[]={3443.8936,2.2857854,13274.729};
 					azimut=37.315613;
-					id=64;
+					id=63;
 					side="GUER";
 					vehicle="I_soldier_LAT_F";
 					rank="CORPORAL";
@@ -1334,7 +1307,7 @@ class Mission
 				{
 					position[]={3444.8372,2.2951281,13267.721};
 					azimut=37.315613;
-					id=65;
+					id=64;
 					side="GUER";
 					vehicle="I_soldier_A_F";
 					skill=0.2;
@@ -1385,7 +1358,7 @@ class Mission
 				class Item0
 				{
 					position[]={4879.52,16.164225,16444.457};
-					id=66;
+					id=65;
 					side="GUER";
 					vehicle="I_Soldier_GL_F";
 					leader=1;
@@ -1396,12 +1369,12 @@ class Mission
 						"Houses",
 						"Bridge"
 					};
-					init="this removeweapon ""ItemRadio""; [group this, position this, [""patrol"",70], [""SAFE"",""BLUE"",""LIMITED""]] call ws_fnc_addWaypoint;";
+					init="this removeweapon ""ItemRadio""; [group this, position this, [""patrol"",70], [""SAFE"",""YELLOW"",""LIMITED""]] call ws_fnc_addWaypoint;";
 				};
 				class Item1
 				{
 					position[]={4884.52,16.184336,16439.457};
-					id=67;
+					id=66;
 					side="GUER";
 					vehicle="I_soldier_F";
 					player="PLAY CDG";
@@ -1420,7 +1393,7 @@ class Mission
 				{
 					position[]={6991.9648,132.70938,16692.398};
 					azimut=-120.712;
-					id=68;
+					id=67;
 					side="GUER";
 					vehicle="I_officer_F";
 					leader=1;
@@ -1433,7 +1406,7 @@ class Mission
 					position[]={6993.77,133.15599,16696.07};
 					azimut=-120.712;
 					special="NONE";
-					id=69;
+					id=68;
 					side="GUER";
 					vehicle="I_crew_F";
 					skill=0.33333331;
@@ -1444,7 +1417,7 @@ class Mission
 					position[]={6990.7114,132.78818,16696.012};
 					azimut=-120.712;
 					special="NONE";
-					id=70;
+					id=69;
 					side="GUER";
 					vehicle="I_crew_F";
 					skill=0.33333331;
@@ -1455,7 +1428,7 @@ class Mission
 					position[]={7020.5854,137.43217,16710.609};
 					azimut=-107.841;
 					special="NONE";
-					id=71;
+					id=70;
 					side="GUER";
 					vehicle="I_Truck_02_covered_F";
 					rank="LIEUTENANT";
@@ -1467,7 +1440,7 @@ class Mission
 					position[]={7033.2803,141.95248,16694.262};
 					azimut=623.76801;
 					special="NONE";
-					id=72;
+					id=71;
 					side="GUER";
 					vehicle="I_Truck_02_medical_F";
 					rank="SERGEANT";
@@ -1479,7 +1452,7 @@ class Mission
 					position[]={7034.7266,144.49484,16683.709};
 					azimut=277.89001;
 					special="NONE";
-					id=73;
+					id=72;
 					side="GUER";
 					vehicle="I_Truck_02_ammo_F";
 					rank="CORPORAL";
@@ -1491,7 +1464,7 @@ class Mission
 					position[]={7026.9536,139.26309,16702.176};
 					azimut=260.21426;
 					special="NONE";
-					id=74;
+					id=73;
 					side="GUER";
 					vehicle="I_MRAP_03_hmg_F";
 					player="PLAY G";
@@ -1548,7 +1521,7 @@ class Mission
 				{
 					position[]={6986.0342,134.04309,16740.555};
 					azimut=-102.231;
-					id=75;
+					id=74;
 					side="GUER";
 					vehicle="I_Soldier_SL_F";
 					leader=1;
@@ -1560,7 +1533,7 @@ class Mission
 				{
 					position[]={6989.8623,133.60532,16746.498};
 					azimut=-102.23051;
-					id=76;
+					id=75;
 					side="GUER";
 					vehicle="I_soldier_TL_F";
 					rank="SERGEANT";
@@ -1570,7 +1543,7 @@ class Mission
 				{
 					position[]={6992.0063,135.4393,16736.678};
 					azimut=-102.56285;
-					id=77;
+					id=76;
 					side="GUER";
 					vehicle="I_soldier_AR_F";
 					rank="CORPORAL";
@@ -1580,7 +1553,7 @@ class Mission
 				{
 					position[]={6994.0513,133.09859,16752.443};
 					azimut=-102.23051;
-					id=78;
+					id=77;
 					side="GUER";
 					vehicle="I_soldier_AR_F";
 					skill=0.2;
@@ -1589,7 +1562,7 @@ class Mission
 				{
 					position[]={6997.9233,135.91553,16732.898};
 					azimut=-102.23051;
-					id=79;
+					id=78;
 					side="GUER";
 					vehicle="I_soldier_AAR_F";
 					skill=0.2;
@@ -1598,7 +1571,7 @@ class Mission
 				{
 					position[]={6997.5146,132.26602,16758.387};
 					azimut=-102.23051;
-					id=80;
+					id=79;
 					side="GUER";
 					vehicle="I_soldier_LAT_F";
 					rank="CORPORAL";
@@ -1608,7 +1581,7 @@ class Mission
 				{
 					position[]={7003.8716,136.26852,16729.074};
 					azimut=-102.23051;
-					id=81;
+					id=80;
 					side="GUER";
 					vehicle="I_medic_F";
 					skill=0.2;
@@ -1617,7 +1590,7 @@ class Mission
 				{
 					position[]={7001.3442,131.41817,16764.34};
 					azimut=-102.23051;
-					id=82;
+					id=81;
 					side="GUER";
 					vehicle="I_soldier_A_F";
 					skill=0.2;
@@ -1654,7 +1627,7 @@ class Mission
 				{
 					position[]={7007.9468,135.07382,16744.305};
 					azimut=-94.635101;
-					id=83;
+					id=82;
 					side="GUER";
 					vehicle="I_Soldier_TL_F";
 					leader=1;
@@ -1666,7 +1639,7 @@ class Mission
 				{
 					position[]={7007.9468,135.07382,16744.305};
 					azimut=-94.635071;
-					id=84;
+					id=83;
 					side="GUER";
 					vehicle="I_engineer_F";
 					rank="CORPORAL";
@@ -1676,7 +1649,7 @@ class Mission
 				{
 					position[]={7012.5303,134.66455,16749.695};
 					azimut=-94.635071;
-					id=85;
+					id=84;
 					side="GUER";
 					vehicle="I_engineer_F";
 					skill=0.2;
@@ -1685,7 +1658,7 @@ class Mission
 				{
 					position[]={7013.3315,137.35341,16739.729};
 					azimut=-94.635071;
-					id=86;
+					id=85;
 					side="GUER";
 					vehicle="I_Soldier_repair_F";
 					skill=0.2;
@@ -1716,7 +1689,7 @@ class Mission
 				class Item0
 				{
 					position[]={4338.4834,5.9995365,16372.081};
-					id=87;
+					id=86;
 					side="GUER";
 					vehicle="I_Soldier_GL_F";
 					leader=1;
@@ -1727,12 +1700,12 @@ class Mission
 						"ValleyVillage",
 						"Roadbend"
 					};
-					init="this removeweapon ""ItemRadio""; [group this, position this, [""patrol"",70], [""SAFE"",""BLUE"",""LIMITED""]] call ws_fnc_addWaypoint;";
+					init="this removeweapon ""ItemRadio""; [group this, position this, [""patrol"",70], [""SAFE"",""YELLOW"",""LIMITED""]] call ws_fnc_addWaypoint;";
 				};
 				class Item1
 				{
 					position[]={4343.4834,6.4051423,16367.081};
-					id=88;
+					id=87;
 					side="GUER";
 					vehicle="I_soldier_F";
 					skill=0.2;
@@ -1749,7 +1722,7 @@ class Mission
 				class Item0
 				{
 					position[]={5422.9272,61.435333,16223.933};
-					id=89;
+					id=88;
 					side="GUER";
 					vehicle="I_Soldier_GL_F";
 					leader=1;
@@ -1760,16 +1733,34 @@ class Mission
 						"Farm",
 						"FactoryRoad"
 					};
-					init="this removeweapon ""ItemRadio""; [group this, position this, [""patrol"",40], [""SAFE"",""BLUE"",""LIMITED""]] call ws_fnc_addWaypoint;";
+					init="this removeweapon ""ItemRadio""; [group this, position this, [""patrol"",40], [""SAFE"",""YELLOW"",""LIMITED""]] call ws_fnc_addWaypoint;";
 				};
 				class Item1
 				{
 					position[]={5427.9272,62.576431,16218.933};
-					id=90;
+					id=89;
 					side="GUER";
 					vehicle="I_soldier_F";
 					skill=0.2;
 					init="this removeweapon ""ItemRadio"";";
+				};
+			};
+		};
+		class Item24
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5153.0483,109.1123,15733.37};
+					azimut=-136.13219;
+					id=90;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					leader=1;
+					skill=0.60000002;
 				};
 			};
 		};
@@ -1786,7 +1777,6 @@ class Mission
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED11";
-			init="BombActivated = false; this addEventHandler [""HandleDamage"", {_box = _this select 0;  _damage = _this select 2;  _source = _this select 3;      _ammoName = _this select 4; _box setDamage (getDammage _box) + _damage; player globalchat format [""%1 was damaged for %2 by %3, using %4. Total damage is %5"", _box ,_Damage, _source, _ammoName, getDammage _box];     ;}];;";
 		};
 		class Item1
 		{
@@ -1797,7 +1787,6 @@ class Mission
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED18";
-			init="h = this addEventHandler [""handleDamage"", {hint ""hit""; BombActivated = true;}];";
 		};
 		class Item2
 		{
@@ -1808,7 +1797,6 @@ class Mission
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED12";
-			init="this addEventHandler [""HandleDamage"", {_box = _this select 0;  _damage = _this select 2;  _source = _this select 3;      _ammoName = _this select 4; _box setDamage (getDammage _box) + _damage; player globalchat format [""%1 was damaged for %2 by %3, using %4. Total damage is %5"", _box ,_Damage, _source, _ammoName, getDammage _box];     ;}];;";
 		};
 		class Item3
 		{
@@ -1819,7 +1807,6 @@ class Mission
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED13";
-			init="this addEventHandler [""HandleDamage"", {_box = _this select 0;  _damage = _this select 2;  _source = _this select 3;      _ammoName = _this select 4; _box setDamage (getDammage _box) + _damage; player globalchat format [""%1 was damaged for %2 by %3, using %4. Total damage is %5"", _box ,_Damage, _source, _ammoName, getDammage _box];     ;}];;";
 		};
 		class Item4
 		{
@@ -1830,7 +1817,6 @@ class Mission
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED17";
-			init="h = this addEventHandler [""handleDamage"", {hint ""hit""; BombActivated = true;}];";
 		};
 		class Item5
 		{
@@ -1841,7 +1827,6 @@ class Mission
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED16";
-			init="h = this addEventHandler [""handleDamage"", {hint ""hit""; BombActivated = true;}];";
 		};
 		class Item6
 		{
@@ -1852,7 +1837,6 @@ class Mission
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED15";
-			init="h = this addEventHandler [""handleDamage"", {hint ""hit""; BombActivated = true;}];";
 		};
 		class Item7
 		{
@@ -1863,8 +1847,8 @@ class Mission
 			vehicle="C_Offroad_01_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			text="Pickup1";
-			init="BombSpotted = false; this setVariable [""SpottingDistance"", 200]; this lockCargo true; IED11 attachTo [Pickup1, [0.31,-1,-0.3]]; IED12 attachTo [Pickup1,[0.28,-1.5,-0.3]]; IED13 attachTo [Pickup1, [0.35,-2.1,-0.3]]; IED14 attachTo [Pickup1, [0.32,-2.6,-0.3]]; IED15 attachTo [Pickup1, [-0.3,-1,-0.3]]; IED16 attachTo [Pickup1, [-0.33,-1.5,-0.3]]; IED17 attachTo [Pickup1, [-0.29,-2.04,-0.3]]; IED18 attachTo [Pickup1, [-0.3,-2.5,-0.3]]; ";
+			text="BombCar";
+			init="BombSpotted = false; this setVariable [""SpottingDistance"", 200]; this lockCargo true; IED11 attachTo [BombCar, [0.31,-1,-0.3]]; IED12 attachTo [BombCar,[0.28,-1.5,-0.3]]; IED13 attachTo [BombCar, [0.35,-2.1,-0.3]]; IED14 attachTo [BombCar, [0.32,-2.6,-0.3]]; IED15 attachTo [BombCar, [-0.3,-1,-0.3]]; IED16 attachTo [BombCar, [-0.33,-1.5,-0.3]]; IED17 attachTo [BombCar, [-0.29,-2.04,-0.3]]; IED18 attachTo [BombCar, [-0.3,-2.5,-0.3]];";
 		};
 		class Item8
 		{
@@ -1928,7 +1912,6 @@ class Mission
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED14";
-			init="this addEventHandler [""HandleDamage"", {_box = _this select 0;  _damage = _this select 2;  _source = _this select 3;      _ammoName = _this select 4; _box setDamage (getDammage _box) + _damage; player globalchat format [""%1 was damaged for %2 by %3, using %4. Total damage is %5"", _box ,_Damage, _source, _ammoName, getDammage _box];     ;}];;";
 		};
 		class Item14
 		{
@@ -2082,7 +2065,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=28;
+		items=27;
 		class Item0
 		{
 			position[]={5076.376,27.667219,16665.129};
@@ -2107,7 +2090,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			text="Enable radio trigger";
-			expCond="alive Pickup1";
+			expCond="alive BombCar";
 			expActiv="1 setRadioMsg ""Activate bomb""";
 			expDesactiv="1 setRadioMsg ""NULL""";
 			class Effects
@@ -2147,7 +2130,7 @@ class Mission
 			age="UNKNOWN";
 			text="Bomb activated";
 			expCond="BombActivated";
-			expActiv="{bomb = ""M_Mo_82mm_AT_LG"" createVehicle [(position _x select 0) - 20 + random 40, (position _x select 1) - 20 + random 40, 0]; deleteVehicle _x} forEach [IED11,IED12,IED13,IED14,IED15,IED16,IED17,IED18]; {_x setDamage (1 - ((_x distance pickup1)-25)/40)} foreach nearestObjects [Pickup1, [], 200] ";
+			expActiv="{bomb = ""M_Mo_82mm_AT_LG"" createVehicle [(position _x select 0) - 20 + random 40, (position _x select 1) - 20 + random 40, 0]; deleteVehicle _x} forEach [IED11,IED12,IED13,IED14,IED15,IED16,IED17,IED18]; {_x setDamage (1 - ((_x distance BombCar)-25)/40)} foreach nearestObjects [BombCar, [], 200] ";
 			class Effects
 			{
 			};
@@ -2161,28 +2144,13 @@ class Mission
 			type="SWITCH";
 			age="UNKNOWN";
 			text="Truck too damaged";
-			expCond="getDammage Pickup1 > 0.001";
+			expCond="getDammage BombCar > 0.001";
 			expActiv="player setVariable [""BombActivated"", true, true]";
 			class Effects
 			{
 			};
 		};
 		class Item6
-		{
-			position[]={5083.2905,27.794418,16669.496};
-			a=0;
-			b=0;
-			interruptable=1;
-			type="SWITCH";
-			age="UNKNOWN";
-			text="IEDs damaged";
-			expCond="IedDamageThreshold = 0; getDammage IED11 > IedDamageThreshold or getDammage IED12 > IedDamageThreshold or getDammage IED13 > IedDamageThreshold or getDammage IED14 > IedDamageThreshold or getDammage IED15 > IedDamageThreshold or getDammage IED16 > IedDamageThreshold or getDammage IED17 > IedDamageThreshold or getDammage IED18 > IedDamageThreshold";
-			expActiv="player setVariable [""BombActivated"", true, true]";
-			class Effects
-			{
-			};
-		};
-		class Item7
 		{
 			position[]={4554.5181,265.64575,15380.749};
 			a=5;
@@ -2192,14 +2160,14 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			idStatic=1069853;
-			idObject=-1073431779;
+			idStatic=1076166;
+			idObject=-1073431610;
 			expActiv="RadioTower2Destroyed = true; publicVariable ""RadioTower2Destroyed"";";
 			class Effects
 			{
 			};
 		};
-		class Item8
+		class Item7
 		{
 			position[]={4587.252,261.85461,15400.678};
 			a=5;
@@ -2209,14 +2177,14 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			idStatic=1069851;
-			idObject=-1071332581;
+			idStatic=1076168;
+			idObject=-1071332408;
 			expActiv="RadioTower1Destroyed = true; publicVariable ""RadioTower1Destroyed"";";
 			class Effects
 			{
 			};
 		};
-		class Item9
+		class Item8
 		{
 			position[]={4563.4805,262.70435,15362.358};
 			a=0;
@@ -2232,7 +2200,7 @@ class Mission
 			{
 			};
 		};
-		class Item10
+		class Item9
 		{
 			position[]={4571.0669,263.03497,15366.338};
 			a=0;
@@ -2243,7 +2211,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			text="Lose outro";
-			expCond="(!alive Pickup1) and (!RadioTower1Destroyed or !RadioTower2Destroyed)";
+			expCond="(!alive BombCar) and (!RadioTower1Destroyed or !RadioTower2Destroyed)";
 			class Effects
 			{
 				track="$STOP$";
@@ -2251,7 +2219,7 @@ class Mission
 				title="Blast! The bomb didn't reach the towers!";
 			};
 		};
-		class Item11
+		class Item10
 		{
 			position[]={4571.0664,261.86194,15362.447};
 			a=0;
@@ -2262,14 +2230,14 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			text="Lose";
-			expCond="(!alive Pickup1) and (!RadioTower1Destroyed or !RadioTower2Destroyed)";
+			expCond="(!alive BombCar) and (!RadioTower1Destroyed or !RadioTower2Destroyed)";
 			expActiv="""LOSER"" call BIS_fnc_endMission;";
 			class Effects
 			{
 				track="AmbientTrack01_F";
 			};
 		};
-		class Item12
+		class Item11
 		{
 			position[]={5044.7881,28.346123,16676.834};
 			a=0;
@@ -2285,7 +2253,7 @@ class Mission
 			{
 			};
 		};
-		class Item13
+		class Item12
 		{
 			position[]={5044.7705,28.180252,16671.961};
 			a=0;
@@ -2304,7 +2272,7 @@ class Mission
 				title="AAF forces have identified us! Expect trouble!";
 			};
 		};
-		class Item14
+		class Item13
 		{
 			position[]={5049.2441,29.135544,16690.883};
 			a=0;
@@ -2318,7 +2286,7 @@ class Mission
 			{
 			};
 		};
-		class Item15
+		class Item14
 		{
 			position[]={5083.6973,103.36458,15665};
 			a=0;
@@ -2327,12 +2295,12 @@ class Mission
 			age="UNKNOWN";
 			text="Calling in Reserves";
 			expCond="PlayerWeaponsSpotted or BombSpotted";
-			expActiv="[Reserves, SpotPosition] call eso_sendReinforcements;";
+			expActiv="[Reserves, SpotPosition] call ESO_fnc_sendReinforcements;";
 			class Effects
 			{
 			};
 		};
-		class Item16
+		class Item15
 		{
 			position[]={4394.5903,99.529701,15826.432};
 			a=0;
@@ -2341,12 +2309,12 @@ class Mission
 			age="UNKNOWN";
 			text="SAD when players spotted";
 			expCond="PlayerWeaponsSpotted or BombSpotted";
-			expActiv="while {(count (waypoints WesternRoadblock)) > 0} do {   deleteWaypoint ((waypoints WesternRoadblock) select 0);}; [WesternRoadblock, SpotPosition, [""SAD"",100], [""AWARE"",""YELLOW"",""FULL""]] call ws_fnc_addWaypoint;";
+			expActiv="[WesternRoadblock] call ESO_fnc_clearWaypoints; [WesternRoadblock, SpotPosition, [""SAD"",100], [""AWARE"",""YELLOW"",""FULL""]] call ws_fnc_addWaypoint;";
 			class Effects
 			{
 			};
 		};
-		class Item17
+		class Item16
 		{
 			position[]={5084.3994,78.705055,16136.93};
 			a=0;
@@ -2355,12 +2323,12 @@ class Mission
 			age="UNKNOWN";
 			text="SAD when players or bomb spotted";
 			expCond="PlayerWeaponsSpotted or BombSpotted";
-			expActiv="[EasternRoadblockCrew, SpotPosition] call eso_sendReinforcements;";
+			expActiv="[EasternRoadblockCrew, SpotPosition] call ESO_fnc_sendReinforcements;";
 			class Effects
 			{
 			};
 		};
-		class Item18
+		class Item17
 		{
 			position[]={4536.0586,263.57471,15433.363};
 			a=0;
@@ -2369,12 +2337,12 @@ class Mission
 			age="UNKNOWN";
 			text="SAD if alerted";
 			expCond="PlayerWeaponsSpotted";
-			expActiv="[TowerCrew, position this] call eso_sendReinforcements;";
+			expActiv="[TowerCrew, position this] call ESO_fnc_sendReinforcements;";
 			class Effects
 			{
 			};
 		};
-		class Item19
+		class Item18
 		{
 			position[]={5051.5234,28.238888,16676.729};
 			a=0;
@@ -2384,13 +2352,13 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			text="AAF close enough to spot bomb";
-			expCond="({faction _x == ""IND_F"" and (_x knowsAbout Pickup1) > 0} count ((position Pickup1) nearEntities (Pickup1 getVariable [""SpottingDistance"", 200]) )) > 0";
-			expActiv="BombSpotted = true; publicVariable ""BombSpotted""; SpotPosition = position Pickup1; publicVariable ""SpotPosition"";";
+			expCond="({faction _x == ""IND_F"" and (_x knowsAbout BombCar) > 0} count ((position BombCar) nearEntities (BombCar getVariable [""SpottingDistance"", 200]) )) > 0";
+			expActiv="BombSpotted = true; publicVariable ""BombSpotted""; SpotPosition = position BombCar; publicVariable ""SpotPosition"";";
 			class Effects
 			{
 			};
 		};
-		class Item20
+		class Item19
 		{
 			position[]={5591.9858,21.609215,14854.286};
 			a=0;
@@ -2399,12 +2367,12 @@ class Mission
 			age="UNKNOWN";
 			text="Calling in MotorizedReserves";
 			expCond="PlayerWeaponsSpotted or BombSpotted";
-			expActiv="[MotorizedReserves, SpotPosition] call eso_sendReinforcements;";
+			expActiv="[MotorizedReserves, SpotPosition] call ESO_fnc_sendReinforcements;";
 			class Effects
 			{
 			};
 		};
-		class Item21
+		class Item20
 		{
 			position[]={5051.9238,28.152693,16672.316};
 			a=0;
@@ -2414,7 +2382,7 @@ class Mission
 			age="UNKNOWN";
 			text="Bomb spotted!";
 			expCond="false and BombSpotted";
-			expActiv="{_x setCaptive false} forEach units group player; Pickup1 addRating -10000; resistance setFriend [civilian, 0]; civilian setFriend [resistance, 0];";
+			expActiv="{_x setCaptive false} forEach units group player; BombCar addRating -10000; resistance setFriend [civilian, 0]; civilian setFriend [resistance, 0];";
 			class Effects
 			{
 				sound="Alarm_Independent";
@@ -2423,7 +2391,7 @@ class Mission
 				title="They've seen the bomb! This is bad!!";
 			};
 		};
-		class Item22
+		class Item21
 		{
 			position[]={4563.9829,263.80777,15366.255};
 			a=0;
@@ -2436,7 +2404,7 @@ class Mission
 				track="LeadTrack05_F";
 			};
 		};
-		class Item23
+		class Item22
 		{
 			position[]={4595.6172,259.14038,15374.718};
 			a=0;
@@ -2451,7 +2419,7 @@ class Mission
 			{
 			};
 		};
-		class Item24
+		class Item23
 		{
 			position[]={4542.0737,263.18045,15427.766};
 			a=0;
@@ -2460,12 +2428,12 @@ class Mission
 			age="UNKNOWN";
 			text="SAD if alerted";
 			expCond="BombSpotted";
-			expActiv="[TowerCrew, position Pickup1] call eso_sendReinforcements;";
+			expActiv="[TowerCrew, position BombCar] call ESO_fnc_sendReinforcements;";
 			class Effects
 			{
 			};
 		};
-		class Item25
+		class Item24
 		{
 			position[]={4621.3633,244.89761,15472.72};
 			a=0;
@@ -2474,12 +2442,12 @@ class Mission
 			age="UNKNOWN";
 			text="Destroy bomb truck if spotted";
 			expCond="BombSpotted";
-			expActiv="null = [OPSentry, true, position Pickup1, ""Destroy"", ""RED"", ""AWARE"", ""FULL"", ""LINE""] execVM ""addWaypoint.sqf""; ";
+			expActiv="[OPSentry] call ESO_fnc_clearWaypoints; [OPSentry, SpotPosition, [""DESTROY"",100], [""COMBAT"",""RED"",""FULL""]] call ws_fnc_addWaypoint;";
 			class Effects
 			{
 			};
 		};
-		class Item26
+		class Item25
 		{
 			position[]={4619.3857,243.14877,15483.002};
 			a=0;
@@ -2488,12 +2456,12 @@ class Mission
 			age="UNKNOWN";
 			text="Sentry if players spotted";
 			expCond="PlayerWeaponsSpotted";
-			expActiv="null = [OPSentry, true, position this, ""SENTRY"", ""RED"", ""AWARE""] execVM ""addWaypoint.sqf"";";
+			expActiv="[OPSentry] call ESO_fnc_clearWaypoints; [OPSentry, SpotPosition, [""SENTRY"",100], [""AWARE"",""YELLOW"",""FULL""]] call ws_fnc_addWaypoint;";
 			class Effects
 			{
 			};
 		};
-		class Item27
+		class Item26
 		{
 			position[]={5477.707,73.491096,17894.439};
 			a=0;
@@ -2502,7 +2470,7 @@ class Mission
 			age="UNKNOWN";
 			text="SAD when players or bomb spotted";
 			expCond="PlayerWeaponsSpotted or BombSpotted";
-			expActiv="while {(count (waypoints MechanizedReserves)) > 0} do {   deleteWaypoint ((waypoints MechanizedReserves) select 0);}; null = [MechanizedReserves, true, SpotPosition, ""SAD"", ""RED"", ""AWARE"", ""FULL"", ""LINE""] execVM ""addWaypoint.sqf"";";
+			expActiv="[MechanizedReserves, SpotPosition] call ESO_fnc_sendReinforcements;";
 			class Effects
 			{
 			};

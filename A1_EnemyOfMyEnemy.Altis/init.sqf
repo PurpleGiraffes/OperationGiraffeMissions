@@ -1,10 +1,5 @@
 
-loudness =   compile preprocessFile "firedNearLoudness.sqf";
-
-//call compile preprocess "ws_fnc\ws_fnc_init.sqf";
-
 [] execVM "briefing.sqf";
-
 
 // This piece of code will do a text on black intro with a fade-in:
 // titleCut ["", "BLACK FADED", 999];
