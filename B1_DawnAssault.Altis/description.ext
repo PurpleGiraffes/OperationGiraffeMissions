@@ -1,3 +1,21 @@
+class Header
+{
+	gameType = Coop;
+	minPlayers = 5;
+	maxPlayers = 14;
+};
+
+onLoadName = "B1: Landfall";
+onLoadMission = "NATO troops make landfall on Stratis, aiming to take the port of Kavala.";
+author = "EsotericReverie";
+loadScreen = "landfall.jpg";
+
+Respawn = 3;
+RespawnDelay = 1;
+RespawnDialog = 0;
+
+
+
 class CfgFunctions
 {
 	class WS
@@ -57,6 +75,7 @@ class CfgFunctions
 			class firedNearLoudness { file = "eso\eso_firedNearLoudness.sqf";};
 			class clearWaypoints { file = "eso\eso_clearWaypoints.sqf"; };
 			class sendReinforcements { file = "eso\eso_sendReinforcements.sqf";};
+			class unpackStaticWeapon { file = "eso\eso_unpackStaticWeapon.sqf";};
 		};
 		class MissionHelpers
 		{
@@ -64,3 +83,6 @@ class CfgFunctions
 		};
 	};
 };
+
+
+#include "=BTC=_revive\=BTC=_respawn.h"
