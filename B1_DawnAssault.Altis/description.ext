@@ -71,9 +71,10 @@ class CfgFunctions
 	{
 		class AI
 		{
-			class fireWeaponAtTargets { file = "eso\eso_fireWeaponAtTargets.sqf";};
-			class firedNearLoudness { file = "eso\eso_firedNearLoudness.sqf";};
 			class clearWaypoints { file = "eso\eso_clearWaypoints.sqf"; };
+			class firedNearLoudness { file = "eso\eso_firedNearLoudness.sqf";};
+			class fireWeaponAtTargets { file = "eso\eso_fireWeaponAtTargets.sqf";};
+			class placeHostages { file = "eso\eso_placeHostages.sqf";};
 			class sendReinforcements { file = "eso\eso_sendReinforcements.sqf";};
 			class unpackStaticWeapon { file = "eso\eso_unpackStaticWeapon.sqf";};
 		};
