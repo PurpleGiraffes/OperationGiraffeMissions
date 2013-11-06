@@ -1,0 +1,17 @@
+enabledebugconsole = 1;
+briefingName = "CO 07 The Snake's Head";
+
+author="LaKroy";
+OnLoadName = "The Snake's Head";
+OnLoadMission = "Coordinate a sniper team and a distraction team to take down General Valakos.";
+loadScreen = "planning.jpg";
+
+overviewText = "Coordinate a sniper team and a distraction team to take down General Valakos.";
+overviewPicture = "planning.jpg";
+
+class Header
+{
+	gameType = Coop; // MP misison type
+	minPlayers = 5; //min # of players the mission supports
+	maxPlayers = 7; //max # of players the mission supports
+};
