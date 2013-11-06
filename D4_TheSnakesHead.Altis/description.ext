@@ -1,3 +1,7 @@
+Respawn = 3;
+RespawnDelay = 1;
+RespawnDialog = 0;
+
 enabledebugconsole = 1;
 briefingName = "CO 07 The Snake's Head";
 
@@ -15,3 +19,5 @@ class Header
 	minPlayers = 5; //min # of players the mission supports
 	maxPlayers = 7; //max # of players the mission supports
 };
+
+#include "=BTC=_revive\=BTC=_respawn.h"
