@@ -5437,7 +5437,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="server";
-					init="setviewdistance 5000;";
+					init="setviewdistance 2100;";
 				};
 			};
 		};
